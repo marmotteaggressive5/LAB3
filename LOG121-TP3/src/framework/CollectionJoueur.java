@@ -4,7 +4,7 @@ public class CollectionJoueur extends Collection<Joueur> {
 
 	@Override
 	public IIterateur<Joueur> createIterateur() {
-		return null;
+		return new IterateurJoueur(this);
 	}
 
 
