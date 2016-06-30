@@ -3,9 +3,10 @@ package framework;
 public class De implements Comparable<De> {
 
 	private int nbFaces;
+	private int currentFace;
 	
-	public De(final int aNbDe) {
-		this.nbFaces = aNbDe;
+	public De(final int nbFaces) {
+		this.nbFaces = nbFaces;
 	}
 	
 	@Override
@@ -16,6 +17,14 @@ public class De implements Comparable<De> {
 
 	public int roulerDe() {
 		return (int) (Math.random()*nbFaces + 1);
+	}
+
+	public int getCurrentFace() {
+		return currentFace;
+	}
+
+	public void setCurrentFace(int currentFace) {
+		this.currentFace = currentFace;
 	}
 	
 }

@@ -1,4 +1,4 @@
-package framework;
+package framework.collections.iterateurs;
 
 public interface IIterateur<T> {
 

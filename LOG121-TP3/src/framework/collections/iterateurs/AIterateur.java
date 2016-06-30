@@ -1,4 +1,6 @@
-package framework;
+package framework.collections.iterateurs;
+
+import framework.collections.Collection;
 
 public abstract class AIterateur<T> implements IIterateur<T>{
 

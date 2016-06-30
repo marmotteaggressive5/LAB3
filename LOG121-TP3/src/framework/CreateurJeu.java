@@ -9,6 +9,7 @@ public class CreateurJeu {
 			return new Bunco();
 		}
 		else{
+			//faire un else if pour chaque jeu
 			return new Bunco();	
 		}		
 	}

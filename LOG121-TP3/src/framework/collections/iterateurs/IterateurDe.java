@@ -1,4 +1,7 @@
-package framework;
+package framework.collections.iterateurs;
+
+import framework.De;
+import framework.collections.CollectionDe;
 
 public class IterateurDe extends AIterateur<De> {
 

@@ -1,4 +1,6 @@
-package framework;
+package framework.collections;
+
+import framework.collections.iterateurs.IIterateur;
 
 public abstract class Collection<T> {
 
