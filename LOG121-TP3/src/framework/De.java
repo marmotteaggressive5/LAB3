@@ -3,6 +3,7 @@ package framework;
 public class De implements Comparable<De> {
 
 	private int nbFaces;
+	private int currentFace;
 	
 	public De(final int aNbDe) {
 		this.nbFaces = aNbDe;
