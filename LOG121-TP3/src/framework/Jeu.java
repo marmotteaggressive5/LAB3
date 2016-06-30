@@ -1,9 +1,27 @@
 package framework;
 
-public class Jeu implements IStrategie{
-
-	int nbrDeJoueur;
+public class Jeu {
+	private int nbrDeJoueur;
+	private int nbrDeTours;
+	private StrategiePointage algoPointage = new CalculPointageBunco();
 	
+	
+	public int getNbrDeTours() {
+		return nbrDeTours;
+	}
+
+	public void setNbrDeTours(int nbrDeTours) {
+		this.nbrDeTours = nbrDeTours;
+	}
+
+	public StrategiePointage getAlgoPointage() {
+		return algoPointage;
+	}
+
+	public void setAlgoPointage(StrategiePointage algoPointage) {
+		this.algoPointage = algoPointage;
+	}
+
 	public int getNbrDeJoueur() {
 		return nbrDeJoueur;
 	}
@@ -11,17 +29,4 @@ public class Jeu implements IStrategie{
 	public void setNbrDeJoueur(int nbrDeJoueur) {
 		this.nbrDeJoueur = nbrDeJoueur;
 	}
-
-	@Override
-	public Joueur calculerLeVainqueur(final Jeu aJeu) {
-		// TODO Auto-generated method stub
-		return null;
-	}
-
-	@Override
-	public int calculerScoreTour(final Jeu aJeu) {
-		// TODO Auto-generated method stub
-		return 0;
-	}
-
 }

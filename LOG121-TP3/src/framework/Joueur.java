@@ -4,7 +4,7 @@ public class Joueur implements Comparable<Joueur>{
 
 	private int nbrPoints;
 	private int nbrDeParJoueur;
-	
+
 	
 	public int getNbrPoints() {
 		return nbrPoints;
