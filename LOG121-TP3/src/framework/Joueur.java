@@ -13,6 +13,10 @@ public class Joueur implements Comparable<Joueur>{
 	public int getNbrPoints() {
 		return nbrPoints;
 	}
+	
+	public int addPoints(int valeur) {
+		return nbrPoints+valeur;
+	}
 
 	/**
 	 * Modifie le nombre de point du joueur.

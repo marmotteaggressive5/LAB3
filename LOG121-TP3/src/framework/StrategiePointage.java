@@ -2,6 +2,7 @@ package framework;
 
 public interface StrategiePointage {
 
+
 	/**
 	 * Calcule le vainqueur de la partie.
 	 * 
@@ -9,7 +10,7 @@ public interface StrategiePointage {
 	 * @return le joueur vainqueur de la partie.
 	 */
 	public Joueur calculerLeVainqueur(final Jeu aJeu);
-	
+
 	/**
 	 * Calcul le score d'un tour de la partie.
 	 * 
@@ -17,4 +18,5 @@ public interface StrategiePointage {
 	 * @return le score du tour.
 	 */
 	public int calculerScoreTour(final Jeu aJeu);
+
 }

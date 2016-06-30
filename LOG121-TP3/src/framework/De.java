@@ -5,6 +5,7 @@ public class De implements Comparable<De> {
 	private int nbFaces;
 	private int currentFace;
 	
+
 	/**
 	 * Constructeur de De.
 	 * 
@@ -78,4 +79,5 @@ public class De implements Comparable<De> {
 			return -1;
 		}
 	}	
+
 }
