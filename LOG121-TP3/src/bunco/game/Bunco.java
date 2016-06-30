@@ -1,5 +1,7 @@
 package bunco.game;
 
-public class Bunco {
+import framework.AJeu;
+
+public class Bunco extends AJeu {
 
 }

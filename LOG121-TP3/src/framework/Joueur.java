@@ -1,12 +1,21 @@
 package framework;
 
-public class Joueur implements Comparable{
+public class Joueur implements Comparable<Joueur>{
+
+	private int nbrPoints;
+	
+	public int getNbrPoints() {
+		return nbrPoints;
+	}
+
+	public void setNbrPoints(int nbrPoints) {
+		this.nbrPoints = nbrPoints;
+	}
 
 	@Override
-	public int compareTo(Object o) {
-		// TODO Auto-generated method stub
-		int somme = 1+1;
-		return 1;
+	public int compareTo(Joueur joueur) {
+		// add some code
+		return 0;
 	}
 
 }

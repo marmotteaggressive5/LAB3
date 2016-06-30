@@ -1,6 +1,6 @@
 package framework;
 
-public class Jeu implements IStrategie{
+public abstract class AJeu  implements IStrategie{
 
 	@Override
 	public Joueur calculerLeVainqueur(final Jeu aJeu) {
