@@ -4,7 +4,12 @@ public class Joueur implements Comparable<Joueur>{
 
 	private int nbrPoints;
 	private int nbrDeParJoueur;
-	
+
+	/**
+	 * Obtient le nombre de points du joueur
+	 * 
+	 * @return le nombre de points du joueur
+	 */
 	public int getNbrPoints() {
 		return nbrPoints;
 	}
@@ -19,8 +24,15 @@ public class Joueur implements Comparable<Joueur>{
 
 	@Override
 	public int compareTo(Joueur joueur) {
-		// add some code
-		return 0;
+		int value = joueur.getNbrPoints() - getNbrPoints();
+		
+		if (value == 0) {
+			return 0;
+		} else if (value > 0) {
+			return 1;
+		} else {
+			return -1;
+		}
 	}
 
 }
