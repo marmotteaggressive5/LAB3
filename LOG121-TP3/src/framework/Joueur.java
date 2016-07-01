@@ -3,8 +3,14 @@ package framework;
 public class Joueur implements Comparable<Joueur>{
 
 	private int nbrPoints;
-	private int nbrDeParJoueur;
+	private int id;
 
+	public int getId() {
+		return id;
+	}
+	public Joueur(int id) {
+		this.id = id;
+	}
 	/**
 	 * Obtient le nombre de points du joueur.
 	 * 
@@ -13,21 +19,9 @@ public class Joueur implements Comparable<Joueur>{
 	public int getNbrPoints() {
 		return nbrPoints;
 	}
-	
 	public int addPoints(int valeur) {
 		return nbrPoints+valeur;
 	}
-
-	/**
-	 * Modifie le nombre de point du joueur.
-	 * 
-	 * @param nbrPoints le nombre de points
-	 */
-	public void setNbrPoints(int nbrPoints) {
-		this.nbrPoints = nbrPoints;
-	}
-
-
 	/**
 	 * Compare le nombre de points avec un autre joueur.
 	 * 

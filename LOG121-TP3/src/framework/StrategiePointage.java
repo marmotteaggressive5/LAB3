@@ -1,5 +1,7 @@
 package framework;
 
+import framework.collections.CollectionJoueur;
+
 public interface StrategiePointage {
 
 
@@ -9,7 +11,7 @@ public interface StrategiePointage {
 	 * @param aJeu le jeu  joue.
 	 * @return le joueur vainqueur de la partie.
 	 */
-	public Joueur calculerLeVainqueur(final Jeu aJeu);
+	public CollectionJoueur calculerLeVainqueur(AJeu aJeu);
 
 	/**
 	 * Calcul le score d'un tour de la partie.
@@ -17,6 +19,6 @@ public interface StrategiePointage {
 	 * @param le jeu joue.
 	 * @return le score du tour.
 	 */
-	public int calculerScoreTour(final Jeu aJeu);
+	public boolean calculerScorePly(AJeu aJeu);
 
 }

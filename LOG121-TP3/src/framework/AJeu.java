@@ -1,30 +1,26 @@
 package framework;
 
-import bunco.game.CalculPointageBunco;
 import framework.collections.CollectionDe;
 import framework.collections.CollectionJoueur;
 import framework.collections.iterateurs.IterateurDe;
 
 public abstract class AJeu{
-	protected int currentTour = 1;
+	protected int currentTour;
+	
+
 	protected int nbrDeJoueurs;
 	protected int nbrDeTours;
 	protected CollectionDe collectionDe;
 	protected CollectionJoueur collectionJoueur;
-	StrategiePointage algoPointage = new CalculPointageBunco();
-	public AJeu(int nbrDeJoueurs, int nbrDeTours, int nbrDeDes, int nbrDeFaces){
-		this.nbrDeJoueurs = nbrDeJoueurs;
-		this.nbrDeTours = nbrDeTours;
-		this.collectionJoueur = new CollectionJoueur(nbrDeJoueurs);
-		this.collectionDe = new CollectionDe(nbrDeDes, nbrDeFaces);
-	}
+	protected StrategiePointage algoPointage;
+	protected Joueur currentPlayerTurn;
+	protected CollectionJoueur collectionJoueurTrier;
+	
 	public void lancerTousLesDes(){
 		IterateurDe iterateur = collectionDe.createIterateur();
-		
 		while (iterateur.hasNext()) {
 			De currentDe = iterateur.next();
 			currentDe.roulerDe();
-			System.out.println(currentDe.getCurrentFace());
 		}
 	}
 	public boolean isDesPareil(){
@@ -54,12 +50,27 @@ public abstract class AJeu{
 		
 		return result;
 	}
-	public void jouerPartie(){
 	
+	public int getCurrentTour() {
+		return currentTour;
+	}
+	public Joueur getcurrentPlayerTurn() {
+		return currentPlayerTurn;
+	}
+	public CollectionJoueur getCollectionJoueur() {
+		return collectionJoueur;
 	}
 	
+	public abstract void initialiser();
+	public abstract void jouerPly(int indexJoueur);
+	public abstract void jouerTour();
+	public abstract void calculerGagnant();
 	
-	
-	
-	public abstract void jouerTour(int indexJoueur);
+	public void jouerPartie(){
+		initialiser();
+		for(int i = 0;i<this.nbrDeTours;i++){
+			jouerTour();
+		}
+		calculerGagnant();
+	}
 }

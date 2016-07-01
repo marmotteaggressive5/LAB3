@@ -116,6 +116,11 @@ public abstract class Collection<T> {
 		nbElement = 0;
 	}
 	
+	/**
+	 * Cree un iterateur pour la collection actuelle.
+	 * 
+	 * @return un iterateur de la collection. 
+	 */
 	public abstract IIterateur<T> createIterateur();
 
 
