@@ -1,11 +1,10 @@
 package test;
+
 import static org.junit.Assert.*;
-
 import org.junit.*;
-
 import framework.De;
 
-public class DeTest extends BuncoTest {
+public class DeTest{
 
 	private De de1;
 	private De de2;
