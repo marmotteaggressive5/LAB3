@@ -71,7 +71,6 @@ public class Bunco extends AJeu {
 		collectionJoueurTrier = algoPointage.calculerLeVainqueur(this);
 	}
 
-	
 	public int getNbrDeJoueurs(){
 		return nbrDeJoueurs;
 	}
@@ -79,4 +78,8 @@ public class Bunco extends AJeu {
 	public int getCurrentTour(){
 		return currentTour;
 	}
+	public void setCurrentTour(int currentTour){
+		this.currentTour=currentTour;
+	}
+	
 }

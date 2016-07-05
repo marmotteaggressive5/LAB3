@@ -52,9 +52,8 @@ public class De implements Comparable<De> {
 		this.nbFaces = nbFaces;
 	}
 	
-	//A CHANGER
 	/**
-	 * Obtient le nombre de faces du de.
+	 * Obtient la valeur de la faces du de.
 	 * 
 	 * @return le nombre de faces.
 	 */

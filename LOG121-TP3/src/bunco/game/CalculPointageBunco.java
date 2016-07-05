@@ -41,10 +41,10 @@ public class CalculPointageBunco implements StrategiePointage {
 	public CollectionJoueur calculerLeVainqueur(AJeu aJeu) {
 		CollectionJoueur joueursTrier = aJeu.getCollectionJoueur();
 		
-		for(int i=0;i<joueursTrier.size();i++){
+		for(int i=0;i<joueursTrier.size()-1;i++){
 			for(int j=0;j<joueursTrier.size()-1;j++){
-				Joueur joueurA = joueursTrier.get(j);
-				Joueur joueurB = joueursTrier.get(j);
+				Joueur joueurA = joueursTrier.get(i);
+				Joueur joueurB = joueursTrier.get(i+1);
 				
 				if(joueurA.getNbrPoints() < joueurB.getNbrPoints()){
 					joueursTrier.swapWithNext(i);
@@ -67,7 +67,7 @@ public class CalculPointageBunco implements StrategiePointage {
 		int pointage = 0 ;
 		int currentTour = game.getCurrentTour();
 		int nbDesGagnants = game.nbDeOfValue(currentTour);
-		Joueur currentJoueur = game.getcurrentPlayerTurn();
+		Joueur currentJoueur = game.getCurrentPlayerTurn();
 		
 		if(nbDesGagnants==NB_DE_POUR_BUNCO){//Bunco!
 			pointage += BUNCO_SCORE;

@@ -89,7 +89,7 @@ public class BuncoTest {
 	public void buncoPlyTest(){
 		int indexJoueur = 1;
 		jeu.jouerPly(indexJoueur);
-		Joueur joueur = jeu.getcurrentPlayerTurn();
+		Joueur joueur = jeu.getCurrentPlayerTurn();
 		int scoreInitiale = joueur.getNbrPoints();
 		
 		for(int i=0;i<100;i++){
@@ -102,8 +102,11 @@ public class BuncoTest {
 		assertTrue(scoreFinale>scoreInitiale);
 	}
 	
+	/**
+	 * Test la methode CalculerGagnat
+	 */
 	@Test
-	public void buncoCalculGagnat(){
+	public void buncoCalculGagnant(){
 		CollectionJoueur collection = jeu.getCollectionJoueur();
 		Joueur joueur1 = collection.get(0);
 		Joueur joueur2 = collection.get(1);
@@ -112,11 +115,12 @@ public class BuncoTest {
 		joueur2.setNbrPoint(6);
 		joueur3.setNbrPoint(0);
 		jeu.calculerGagnant();
-		System.out.println(jeu.getCollectionJoueur().get(0).getNbrPoints());
-		System.out.println(jeu.getCollectionJoueurTrie().get(0).getNbrPoints());
-		System.out.println(joueur2.getNbrPoints());
-		assertTrue(jeu.getCollectionJoueurTrie().get(0).getNbrPoints()==joueur2.getNbrPoints());
-		
+
+		assertTrue(jeu.getCollectionJoueurTrie().get(0).getNbrPoints()==
+				joueur2.getNbrPoints()&&jeu.getCollectionJoueurTrie().get(1)
+				.getNbrPoints()==joueur1.getNbrPoints()&&jeu.
+				getCollectionJoueurTrie().get(2).getNbrPoints()
+				==joueur3.getNbrPoints());
 		
 	}
 }

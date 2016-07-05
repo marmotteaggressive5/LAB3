@@ -73,7 +73,7 @@ public abstract class AJeu{
 	public int getCurrentTour() {
 		return currentTour;
 	}
-	public Joueur getcurrentPlayerTurn() {
+	public Joueur getCurrentPlayerTurn() {
 		return currentPlayerTurn;
 	}
 
@@ -97,4 +97,19 @@ public abstract class AJeu{
 		}
 		calculerGagnant();
 	}
+	
+	public CollectionDe getCollectionDe() {
+		return collectionDe;
+	}
+	
+	public int getNbrDeTours() {
+		return nbrDeTours;
+	}
+	public StrategiePointage getAlgoPointage() {
+		return algoPointage;
+	}
+	public void setCurrentPlayerTurn(Joueur currentPlayerTurn) {
+		this.currentPlayerTurn = currentPlayerTurn;
+	}
+	
 }
