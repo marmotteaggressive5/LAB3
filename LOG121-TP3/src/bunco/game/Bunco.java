@@ -38,6 +38,7 @@ public class Bunco extends AJeu {
 		this.nbrDeJoueurs = nbrDeJoueurs;
 		this.algoPointage = new CalculPointageBunco();
 	}
+	
 	@Override
 	public void initialiser() {
 		this.currentTour = 1;
@@ -45,6 +46,7 @@ public class Bunco extends AJeu {
 		this.collectionJoueur = new CollectionJoueur(this.nbrDeJoueurs);
 		this.collectionDe = new CollectionDe(NBR_DE_DES, NBR_DE_FACES);
 	}
+	
 	@Override
 	public void jouerPly(int indexJoueur) {
 		this.currentPlayerTurn = collectionJoueur.get(indexJoueur);
@@ -53,6 +55,7 @@ public class Bunco extends AJeu {
 			lancerTousLesDes();
 		}while(algoPointage.calculerScorePly(this));
 	}
+	
 	@Override
 	public void jouerTour() {
 		System.out.println("  TOUR NUMERO " + currentTour);
@@ -62,12 +65,17 @@ public class Bunco extends AJeu {
 		}
 		this.currentTour++;
 	}
+	
 	@Override	
 	public void calculerGagnant() {
 		collectionJoueurTrier = algoPointage.calculerLeVainqueur(this);
 	}
 	
-	public int nbrDeJoueurs(){
+	public int GetNbrDeJoueurs(){
 		return nbrDeJoueurs;
+	}
+	
+	public int GetCurrentTour(){
+		return currentTour;
 	}
 }

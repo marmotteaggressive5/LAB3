@@ -62,15 +62,19 @@ public class Joueur implements Comparable<Joueur>{
 	 * @param joueur le joueur en comparaison.
 	 */
 	@Override
-	public int compareTo(Joueur joueur) {
-		int value = joueur.getNbrPoints() - getNbrPoints();
+	public int compareTo(Joueur joueur) throws IllegalArgumentException{
+		try{
+			int value = joueur.getNbrPoints() - getNbrPoints();
 
-		if (value == 0) {
-			return 0;
-		} else if (value > 0) {
-			return 1;
-		} else {
-			return -1;
+			if (value == 0) {
+				return 0;
+			} else if (value > 0) {
+				return 1;
+			} else {
+				return -1;
+			}
+		}catch(Exception e){
+			throw new IllegalArgumentException();
 		}
 	}
 

@@ -82,7 +82,7 @@ public class JoueurTest {
 	 * Test la methode compare - de1 est plus petit que de2
 	 */
 	@Test
-	public void deCompareSuperieurTest(){
+	public void joueurCompareSuperieurTest(){
 		joueur1.setNbrPoint(2);
 		joueur2.setNbrPoint(7);
 		assertTrue(joueur1.compareTo(joueur2)==1);
@@ -92,16 +92,17 @@ public class JoueurTest {
 	 * Test la methode compare - de1 est plus grand que de2
 	 */
 	@Test
-	public void deCompareInferieurTest(){
+	public void joueurCompareInferieurTest(){
 		joueur1.setNbrPoint(2);
 		joueur2.setNbrPoint(7);
 		assertTrue(joueur2.compareTo(joueur1)==-1);
 	}
+	
 	/**
 	 * Test la methode compare quand c'est equal
 	 */
 	@Test
-	public void deCompareSameTest(){
+	public void joueurCompareSameTest(){
 		int desiredFaces = 4;
 		joueur1.setNbrPoint(desiredFaces);
 		assertTrue(joueur1.compareTo(joueur1)==0);
@@ -111,9 +112,10 @@ public class JoueurTest {
 	 * Test la methode compare quand elle compare a null
 	 */
 	@Test(expected=IllegalArgumentException.class)
-	public void deCompareNullTest(){
+	public void joueurCompareNullTest(){
 		joueur1.setNbrPoint(4);
 		joueur1.compareTo(null);
 	}
+	
 	
 }

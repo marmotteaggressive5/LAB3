@@ -88,16 +88,19 @@ public class De implements Comparable<De> {
 	 * @param de le de a comparer.
 	 */
 	@Override
-	public int compareTo(De de) {
-		int value =  de.getCurrentFace() - getCurrentFace();
-		
-		if (value == 0) {
-			return 0;
-		} else if (value > 0){
-			return 1;
-		} else {
-			return -1;
-		}
-	}	
+	public int compareTo(De de) throws IllegalArgumentException {
+		  try{
+		   int value =  de.getCurrentFace() - getCurrentFace();
+		   if (value == 0) {
+		    return 0;
+		   } else if (value > 0){
+		    return 1;
+		   } else {
+		    return -1;
+		   }
+		  }catch(Exception e){
+		   throw new IllegalArgumentException();
+		  }
+		 }
 
 }

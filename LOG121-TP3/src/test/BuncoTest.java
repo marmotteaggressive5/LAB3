@@ -22,13 +22,21 @@ package test;
 
 import static org.junit.Assert.assertEquals;
 
-import org.junit.Test;
+import org.junit.*;
 
 import bunco.game.Bunco;
 
 
 public class BuncoTest {
 
+	private Bunco test;
+	private int nbrDeJoueurs = 3;
+	
+	@Before
+	public void faireAvant(){
+		test = new Bunco(nbrDeJoueurs);
+	}
+	
 	/**
 	 * Test le constructeur
 	 */
@@ -36,9 +44,17 @@ public class BuncoTest {
 	public void joueurConstructorTest(){
 		int desiredId = 3;
 		Bunco jeu = new Bunco(desiredId);
-		assertEquals(jeu.nbrDeJoueurs(),desiredId);
+		assertEquals(jeu.GetNbrDeJoueurs(),desiredId);
 	}
 	
+	@Test
+	public void joueurJouerTourTest(){
+		int tourInitiale = test.GetCurrentTour();
+		test.jouerTour();
+		int tourApres = test.GetCurrentTour();
+		assertEquals(tourInitiale+1,tourApres);
+		
+	}
 	
 }
 
