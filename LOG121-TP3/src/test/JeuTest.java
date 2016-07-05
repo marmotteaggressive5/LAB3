@@ -18,6 +18,8 @@ Historique des modifications
 
  *******************************************************/
 package test;
+import static org.junit.Assert.assertTrue;
+
 import org.junit.*;
 
 import framework.AJeu;
@@ -27,11 +29,11 @@ public class JeuTest {
 	
 	@Before
 	public void faireAvant(){
-
+		
 	}
 	
 	@Test
-	public void jeuGetTour(){
+	public void jeuLancerTest(){
 		
 	}
 }
