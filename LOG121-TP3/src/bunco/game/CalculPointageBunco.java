@@ -32,10 +32,11 @@ public class CalculPointageBunco implements StrategiePointage {
 	private final static int NB_DE_POUR_BUNCO = 3;
 
 	/**
-	 * Calcule le vainqueur de la partie.
+	 * Calcule le vainqueur de la partie en ordonnant la collection de joeur en ordre 
+	 * décroissant selon leur pointage
 	 * 
-	 * @param aJeu le jeu  joue.
-	 * @return le joueur vainqueur de la partie.
+	 * @param aJeu le jeu 
+	 * @return collection de joueur ordonner en ordre décroissant
 	 */
 	@Override
 	public CollectionJoueur calculerLeVainqueur(AJeu aJeu) {
@@ -56,10 +57,10 @@ public class CalculPointageBunco implements StrategiePointage {
 	}
 
 	/**
-	 * Calcul le score d'un ply de la partie.
+	 * Calcul le score d'un ply de la partie et rettourne si le pli est fini
 	 * 
-	 * @param le jeu joue.
-	 * @return le score du tour.
+	 * @param le jeu
+	 * @return isPlyOver?
 	 */
 	@Override
 	public boolean calculerScorePly(AJeu game) {

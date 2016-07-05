@@ -24,9 +24,8 @@ import framework.collections.CollectionJoueur;
 import framework.collections.iterateurs.IterateurDe;
 
 public abstract class AJeu{
+	//attributes
 	protected int currentTour;
-
-
 	protected int nbrDeJoueurs;
 	protected int nbrDeTours;
 	protected CollectionDe collectionDe;
@@ -35,6 +34,11 @@ public abstract class AJeu{
 	protected Joueur currentPlayerTurn;
 	protected CollectionJoueur collectionJoueurTrier;
 	
+	//methods
+	/**
+	 * change la valeur de la face courrante de tout les des de 
+	 * la collectionsDe de facons aléatoire
+	 */
 	public void lancerTousLesDes(){
 		IterateurDe iterateur = collectionDe.createIterateur();
 		while (iterateur.hasNext()) {
@@ -42,6 +46,10 @@ public abstract class AJeu{
 			currentDe.roulerDe();
 		}
 	}
+	/**
+	 * retourne true si tout les dés ont la meme face courrante
+	 * @return isDesPareil?
+	 */
 	public boolean isDesPareil(){
 		boolean result = true;
 		IterateurDe iterateur = collectionDe.createIterateur();
@@ -56,6 +64,12 @@ public abstract class AJeu{
 		
 		return result;
 	}
+	/**
+	 * retourne le nb de dés dans la collection avec comme valeur courrante la valeur rechercher
+	 * 
+	 * @param valeurChercher
+	 * @return nb de dé avec la valeur rechercher
+	 */
 	public int nbDeOfValue(int valeurChercher){
 		int result = 0;
 		IterateurDe iterateur = collectionDe.createIterateur();
@@ -70,26 +84,28 @@ public abstract class AJeu{
 		return result;
 	}
 	
-	public int getCurrentTour() {
-		return currentTour;
-	}
-	public Joueur getCurrentPlayerTurn() {
-		return currentPlayerTurn;
-	}
-
-	public CollectionJoueur getCollectionJoueur() {
-		return collectionJoueur;
-	}
+	//Pattern Method template
 	
-	public CollectionJoueur getCollectionJoueurTrie(){
-		return collectionJoueurTrier;
-	}
-	
+	/**
+	 * Initialise avec les valeur initiale d'une partie
+	 */
 	public abstract void initialiser();
+	/**
+	 * Simule un pli
+	 */
 	public abstract void jouerPly(int indexJoueur);
+	/**
+	 * Simule toute unn tour
+	 */
 	public abstract void jouerTour();
+	/**
+	 * Calcule le gagnant de la partie
+	 */
 	public abstract void calculerGagnant();
 	
+	/**
+	 * Simule toute une partie
+	 */
 	public void jouerPartie(){
 		initialiser();
 		for(int i = 0;i<this.nbrDeTours;i++){
@@ -98,10 +114,10 @@ public abstract class AJeu{
 		calculerGagnant();
 	}
 	
+	//Getter/Setter
 	public CollectionDe getCollectionDe() {
 		return collectionDe;
 	}
-	
 	public int getNbrDeTours() {
 		return nbrDeTours;
 	}
@@ -110,6 +126,18 @@ public abstract class AJeu{
 	}
 	public void setCurrentPlayerTurn(Joueur currentPlayerTurn) {
 		this.currentPlayerTurn = currentPlayerTurn;
+	}
+	public int getCurrentTour() {
+		return currentTour;
+	}
+	public Joueur getCurrentPlayerTurn() {
+		return currentPlayerTurn;
+	}
+	public CollectionJoueur getCollectionJoueur() {
+		return collectionJoueur;
+	}
+	public CollectionJoueur getCollectionJoueurTrie(){
+		return collectionJoueurTrier;
 	}
 	
 }

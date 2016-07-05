@@ -22,6 +22,13 @@ package framework;
 import bunco.game.Bunco;
 
 public class Fabrique {
+	/**
+	 * Permet d'encapsulation instantialisation de la création
+	 * polymorphique de la creation d'un jeu
+	 * 
+	 * @param stringJeu
+	 * @return un AJeu polymorphiser
+	 */
 	public static AJeu creerJeu(String stringJeu) {
 		AJeu newAJeu = null;
 				

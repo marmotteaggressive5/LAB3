@@ -24,6 +24,10 @@ import framework.AJeu;
 import framework.Fabrique;
 
 public class MainClass {
+	/**
+	 * Main class that generate a game of bunco with 2 players
+	 * @param args
+	 */
 	public static void main(String[] args) {
 		AJeu game = Fabrique.creerJeu("Bunco 2P");
 		  
