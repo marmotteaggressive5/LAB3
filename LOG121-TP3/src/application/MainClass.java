@@ -26,7 +26,11 @@ import framework.Fabrique;
 public class MainClass {
 	public static void main(String[] args) {
 		AJeu game = Fabrique.creerJeu("Bunco 2P");
-		
-		game.jouerPartie();
+		  
+		  if(game != null){
+		   game.jouerPartie();
+		  }else{
+		   System.out.println("Le jeu n'existe pas");
+		  }
 	}
 }

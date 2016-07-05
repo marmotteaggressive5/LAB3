@@ -52,9 +52,8 @@ public class Joueur implements Comparable<Joueur>{
 		this.nbrPoints = nbrPoints;
 	}
 
-	//Devrait setter le pointage?
-	public int addPoints(int valeur) {
-		return nbrPoints+valeur;
+	public void addPoints(int valeur) {
+		this.nbrPoints+=valeur;
 	}
 	/**
 	 * Compare le nombre de points avec un autre joueur.

@@ -27,6 +27,7 @@ import org.junit.*;
 
 import framework.AJeu;
 import framework.Joueur;
+import framework.collections.CollectionJoueur;
 import bunco.game.Bunco;
 
 
@@ -39,6 +40,7 @@ public class BuncoTest {
 	public void faireAvant(){
 		jeu = new Bunco(nbrDeJoueurs);
 		jeu.initialiser();
+
 	}
 	
 	/**
@@ -100,4 +102,21 @@ public class BuncoTest {
 		assertTrue(scoreFinale>scoreInitiale);
 	}
 	
+	@Test
+	public void buncoCalculGagnat(){
+		CollectionJoueur collection = jeu.getCollectionJoueur();
+		Joueur joueur1 = collection.get(0);
+		Joueur joueur2 = collection.get(1);
+		Joueur joueur3 = collection.get(2);
+		joueur1.setNbrPoint(2);
+		joueur2.setNbrPoint(6);
+		joueur3.setNbrPoint(0);
+		jeu.calculerGagnant();
+		System.out.println(jeu.getCollectionJoueur().get(0).getNbrPoints());
+		System.out.println(jeu.getCollectionJoueurTrie().get(0).getNbrPoints());
+		System.out.println(joueur2.getNbrPoints());
+		assertTrue(jeu.getCollectionJoueurTrie().get(0).getNbrPoints()==joueur2.getNbrPoints());
+		
+		
+	}
 }

@@ -74,7 +74,7 @@ public class JoueurTest {
 	public void joueurAddPointTest(){
 		int desiredPointage = 3;
 		joueur1.setNbrPoint(0);
-		joueur1.setNbrPoint(joueur1.addPoints(desiredPointage));
+		joueur1.setNbrPoint(desiredPointage);
 		assertEquals(joueur1.getNbrPoints(),desiredPointage);
 	}
 	

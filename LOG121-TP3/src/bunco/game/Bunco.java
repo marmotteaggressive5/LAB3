@@ -70,6 +70,7 @@ public class Bunco extends AJeu {
 	public void calculerGagnant() {
 		collectionJoueurTrier = algoPointage.calculerLeVainqueur(this);
 	}
+
 	
 	public int getNbrDeJoueurs(){
 		return nbrDeJoueurs;

@@ -81,6 +81,10 @@ public abstract class AJeu{
 		return collectionJoueur;
 	}
 	
+	public CollectionJoueur getCollectionJoueurTrie(){
+		return collectionJoueurTrier;
+	}
+	
 	public abstract void initialiser();
 	public abstract void jouerPly(int indexJoueur);
 	public abstract void jouerTour();
