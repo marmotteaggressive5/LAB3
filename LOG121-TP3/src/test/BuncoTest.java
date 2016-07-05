@@ -21,16 +21,18 @@ Historique des modifications
 package test;
 
 import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertTrue;
 
 import org.junit.*;
 
 import framework.AJeu;
+import framework.Joueur;
 import bunco.game.Bunco;
 
 
 public class BuncoTest {
 
-	private AJeu jeu;
+	private Bunco jeu;
 	private int nbrDeJoueurs = 3;
 	
 	@Before
@@ -43,26 +45,59 @@ public class BuncoTest {
 	 * Test le constructeur
 	 */
 	@Test
-	public void joueurConstructorTest(){
+	public void buncoConstructorTest(){
 		int desiredId = 3;
-		Bunco jeu = new Bunco(desiredId);
-		assertEquals(jeu.getNbrDeJoueurs(),desiredId);
+		Bunco jeuTest = new Bunco(desiredId);
+		assertEquals(jeuTest.getNbrDeJoueurs(),desiredId);
 	}
+	
 	/**
 	 * Test la methode JouerTour
 	 */
 	@Test
-	public void joueurJouerTourTest(){
+	public void buncoJouerTourTest(){
 		int tourInitiale = jeu.getCurrentTour();
 		jeu.jouerTour();
 		int tourApres = jeu.getCurrentTour();
 		assertEquals(tourInitiale+1,tourApres);
 	}
 	
+	/**
+	 * Test la  methode getter de nombre de joueur
+	 */
+	@Test
+	public void buncoGetterJoueurTest(){
+		int nbrJoueur = jeu.getNbrDeJoueurs();
+		assertEquals(nbrJoueur,nbrDeJoueurs);
+	}
+	
+	/**
+	 * Test la  methode getter de nombre de joueur
+	 */
+	@Test
+	public void buncoGetterTourTest(){
+		int tour = jeu.getCurrentTour();
+		assertEquals(tour,1);
+	}
+	
+	/**
+	 * Test la methode  jouerPly
+	 */
+	@Test
+	public void buncoPlyTest(){
+		int indexJoueur = 1;
+		jeu.jouerPly(indexJoueur);
+		Joueur joueur = jeu.getcurrentPlayerTurn();
+		int scoreInitiale = joueur.getNbrPoints();
+		
+		for(int i=0;i<100;i++){
+			jeu.jouerPly(indexJoueur);
+		}
+		int scoreFinale = joueur.getNbrPoints();
+		System.out.println(scoreInitiale);
+		System.out.println(scoreFinale);
+		
+		assertTrue(scoreFinale>scoreInitiale);
+	}
 	
 }
-
-/**
- * http://junit.sourceforge.net/javadoc/org/junit/Assert.html
- * http://stackoverflow.com/questions/15718746/how-do-i-junit-test-a-constructor
- */

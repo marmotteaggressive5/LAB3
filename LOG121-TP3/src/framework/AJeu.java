@@ -25,7 +25,7 @@ import framework.collections.iterateurs.IterateurDe;
 
 public abstract class AJeu{
 	protected int currentTour;
-	
+
 
 	protected int nbrDeJoueurs;
 	protected int nbrDeTours;
@@ -76,6 +76,7 @@ public abstract class AJeu{
 	public Joueur getcurrentPlayerTurn() {
 		return currentPlayerTurn;
 	}
+
 	public CollectionJoueur getCollectionJoueur() {
 		return collectionJoueur;
 	}
