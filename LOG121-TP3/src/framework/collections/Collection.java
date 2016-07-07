@@ -21,6 +21,12 @@ package framework.collections;
 
 import framework.collections.iterateurs.IIterateur;
 
+
+/*
+ * CODE EMPRUNTE : Les lignes suivantes sont basees sur une
+ * classe du laboratoire 2 intitule CustomLinkedList
+ *
+ */
 public abstract class Collection<T> {
 
 	private Node first;
