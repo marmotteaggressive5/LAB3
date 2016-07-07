@@ -44,11 +44,11 @@ public class CalculPointageBunco implements StrategiePointage {
 		
 		for(int i=0;i<joueursTrier.size()-1;i++){
 			for(int j=0;j<joueursTrier.size()-1;j++){
-				Joueur joueurA = joueursTrier.get(i);
-				Joueur joueurB = joueursTrier.get(i+1);
+				Joueur joueurA = joueursTrier.get(j);
+				Joueur joueurB = joueursTrier.get(j+1);
 				
 				if(joueurA.getNbrPoints() < joueurB.getNbrPoints()){
-					joueursTrier.swapWithNext(i);
+					joueursTrier.swapWithNext(j);
 				}
 			}
 		}
